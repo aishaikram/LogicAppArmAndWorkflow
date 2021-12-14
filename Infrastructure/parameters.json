@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "10ada5ed-74b4-4a28-a048-050f6e9973b7"
+        },
+        "name": {
+            "value": "AIStdLogApp1"
+        },
+        "location": {
+            "value": "UK South"
+        },
+        "hostingPlanName": {
+            "value": "ASP-AIStdLogApp"
+        },
+        "serverFarmResourceGroup": {
+            "value": "LiaisonIntegrationServicesTest"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "storageAccountName": {
+            "value": "aistdlogapp"
+        },
+        "sku": {
+            "value": "WorkflowStandard"
+        },
+        "skuCode": {
+            "value": "WS1"
+        },
+        "workerSize": {
+            "value": "3"
+        },
+        "workerSizeId": {
+            "value": "3"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "use32BitWorkerProcess": {
+            "value": true
+        }
+    }
+}

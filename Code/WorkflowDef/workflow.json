@@ -1,0 +1,40 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Response": {
+                "type": "Response",
+                "kind": "http",
+                "inputs": {
+                    "statusCode": 200
+                },
+                "runAfter": {}
+            }
+        },
+        "triggers": {
+            "When_a_message_is_received_in_a_queue_(peek-lock)": {
+                "type": "ApiConnection",
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "referenceName": "servicebus"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/@{encodeURIComponent(encodeURIComponent('qutest'))}/messages/head/peek",
+                    "queries": {
+                        "queueType": "Main",
+                        "sessionId": "None"
+                    }
+                },
+                "recurrence": {
+                    "frequency": "Second",
+                    "interval": 1
+                }
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {}
+    },
+    "kind": "Stateful"
+}
